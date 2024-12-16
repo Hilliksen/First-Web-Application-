@@ -19,7 +19,7 @@
         <p>
             <label> 
                 Price of the product :
-                <input type = "number" steps = "any" name = "price"> 
+                <input type = "number" step = "0.1" name = "price"> 
             </label>
         </p>
 
