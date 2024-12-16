@@ -1,9 +1,13 @@
 # First-Web-Application-
-Using OOP I will develop first ever web application, exercise give by Elan Formation (Strasbourg). 
+ This repo is for where I will develop first ever web application, exercise give by Elan Formation (Strasbourg 16/12/2024). 
 
 ### OBJECTIVES:
 - Understand what is application in web ecosystem
-- Apply what I already know from OOP and general HTML and CSS exercises
+- Apply what I already know from HTML and CSS exercises
+- Learn about :
+    - Cross-Site Scripting (XSS)
+    - Superglobals
+    - How to use $_SESSION, $_POST, $_GET.
 - Practice
   
 
