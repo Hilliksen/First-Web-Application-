@@ -24,6 +24,8 @@ h1{
 #container{
     width: 80%;
     margin: 40px auto;
+    display: flex;
+    justify-content: center;
 
     & p{
         text-align: center;
@@ -43,4 +45,54 @@ input {
     border: 1px solid #B44634;
     -moz-appearance: textfield;
     
+}
+
+.nav{  
+    margin: var(--ten); 
+    display: flex;
+    justify-content: flex-end;
+    
+    & a{
+        margin: var(--ten);
+        text-decoration: none;
+        color: #B44634;
+       
+        & i {
+            font-size: 20px;
+            margin-right: var(--ten);
+            ;
+        }
+    }
+}
+
+.nav2{  
+    margin: var(--ten); 
+    
+    & a{
+        margin: var(--ten);
+        text-decoration: none;
+        color: #B44634;
+       
+        & i {
+            font-size: 20px;
+            margin-right: var(--ten);
+            ;
+        }
+    }
+}
+
+
+.error{
+    padding: 20px;
+    border: 2px solid #B44634;
+}
+
+table{
+    border: 2px solid #B44634;
+    padding: var(--ten);
+    
+
+    & td{
+        padding: var(--ten);
+    }
 }
