@@ -5,8 +5,15 @@ session_start();
 if(isset($_POST['submit'])){ //# If the buttong submit as been clicked then its gonna start running this code
 
     //! IMPORTANT 
-    $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //# Here we filter whatever the name user has submitted and we sanitaze or remove the harmful special characters like HTML tags
-    $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);//# here we verify that the input is a float (1.23) and by flag allow we allow the number to have , or . we have to put that because php only allows . for the float, so anything with coma like 1,23 will not be accepted since it isnt a float for php
+    $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    
+    //# Here we filter whatever the name user has submitted and we sanitaze or remove the harmful special characters like HTML tags
+    
+    $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    
+    //# here we verify that the input is a float (1.23) and by flag allow we allow the number to have , or . we have to put that because php only allows . for the float, so anything with coma like 1,23 will not be accepted since it isnt a float for php
+    
+    
     $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT); //# we just check if the input is a int 
 
 
@@ -20,7 +27,7 @@ if(isset($_POST['submit'])){ //# If the buttong submit as been clicked then its 
             "total" => $price*$qtt
         ];
 
-        $_SESSION['products'][] = $product; 
+        $_SESSION['products'][] = $product; //# Here we "append" the $product into the array products
     }
 }
 
