@@ -1,0 +1,2 @@
+XSS - Cross Site Scripting is a way for hackers to get access to someones cookies session tokens or other sensitive informations by injecting a malicious client side code. A backend developper has to make a filtering process (in our processing.php file) that makes it much more difficult to xss our website, this is the most basic way of protecting and insuring that out website is save. 
+
