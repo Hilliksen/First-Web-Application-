@@ -31,6 +31,11 @@ if(isset($_POST['submit'])){ //# If the buttong submit as been clicked then its 
     }
 }
 
+if (isset($_GET['action']) && $_GET['action'] === 'delete') {
+    unset($_SESSION['products'][$product]);
+
+}
+
 header("location:index.php"); //# This sends a response to our index.php so that the user can redo the form, if say you header it to recap then you will just showcase the result but prevent the user from new form submission
 //! DO NOT OUTPUT ANYTHING (echo print or HTML) BEFORE THE HEADER AS IT WILL BUG OUT THE CODE
 //! ALSO REMEMBER THAT THE SCRIPT WILL BE RUNNING AFTER THIS SO EITHER MAKE HEADER LAST THING OR MAKE die() OR exit() FUNCTION 
