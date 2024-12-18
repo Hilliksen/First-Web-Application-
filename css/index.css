@@ -96,3 +96,11 @@ table{
         padding: var(--ten);
     }
 }
+
+
+
+.delete {
+    background-color: #FFFED2 !important;
+    color: #B44634 !important;
+    border: none;
+}

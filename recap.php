@@ -16,6 +16,7 @@
     <div class="nav2">
         <a href="index.php"><i class="fa-solid fa-arrow-left"></i>GO BACK</a>
     </div>
+    
     <h1>YOUR PRODUCTS</h1>
     <div id="container">
         
@@ -43,13 +44,26 @@
                         '<td>'. number_format($product['price'], 2 , ',', '&nbsp;'). '&nbsp;£'. '</td>',  //# We use number formatter to change the way our value is presented, so we start by getting the value first, then by saying 2 you mean 2 places after a decimal, next we show what sign is for decimal for us and after that we add a nonbreaking space. After we formatted our value we just add a symbol for money                   
                         '<td>'. $product['qtt']. '</td>',                    
                         '<td>'. number_format($product['total'], 2 , ',', '&nbsp;'). '&nbsp;£'. '</td>',
-                        '<td> X </td>',
+                        '<td> 
+                            <form class="delete" action="processing.php?action = delete" method = "get">
+                                <p>
+                                    <input class = "delete" type = "submit" name = "DELETE" value ="Delete">
+                                </p>
+                            </form> 
+                        </td>',
                         '</tr>';    
                     $totalGeneral += $product['total'];                
             }
             echo '<tr>',
                     '<td colspan = 4> Total general : </td>',
                     '<td> <strong>'.number_format($totalGeneral, 2 , ',' , '&nbsp;'). '&nbsp;£</strong> </td>',
+                    '<td> 
+                            <form action="processing.php?action=delete" method = "get">
+                                <p>
+                                    <input class="delete" type = "submit" name = "DELETE" value ="Delete All" >
+                                </p>
+                            </form> 
+                        </td>',
                     '</tbody>',
                 '</table>';        
             
