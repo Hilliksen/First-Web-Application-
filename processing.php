@@ -57,9 +57,14 @@ if (isset($_GET['action'])){
         }
         break;
         case 'qtt-down';
-        if (isset( $_GET['id']) && isset($_SESSION['products'][$_GET['id']])) {
+        if (isset( $_GET['id']) && isset($_SESSION['products'][$_GET['id']]))  {
 
-            $_SESSION['products'][$_GET['id']]['qtt']--;
+            if ($_SESSION['products'][$_GET['id']]['qtt']  > 0) { // Prevent going below 1
+                $_SESSION['products'][$_GET['id']]['qtt']--;
+            }
+            if ($_SESSION['products'][$_GET['id']]['qtt'] <= 0) {
+                unset($_SESSION['products'][$_GET['id']]);
+            }
             header("Location: recap.php");exit;
         }
         break;
