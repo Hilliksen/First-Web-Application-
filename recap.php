@@ -38,32 +38,24 @@
                         '<tbody>';
             $totalGeneral = 0; //# First we need to initialize the var to "store" our total, since we did it here and not inside of the loop then that means that += in the loop gives 0 + whatever total amount we got from products 
             foreach($_SESSION['products'] as $index => $product){ //# here we call upon the associative array 
-                echo '<tr>',
-                        '<td>'. $index . '</td>', //               
-                        '<td>'. $product ['name']. '</td>',                    
-                        '<td>'. number_format($product['price'], 2 , ',', '&nbsp;'). '&nbsp;£'. '</td>',  //# We use number formatter to change the way our value is presented, so we start by getting the value first, then by saying 2 you mean 2 places after a decimal, next we show what sign is for decimal for us and after that we add a nonbreaking space. After we formatted our value we just add a symbol for money                   
-                        '<td>'. $product['qtt']. '</td>',                    
-                        '<td>'. number_format($product['total'], 2 , ',', '&nbsp;'). '&nbsp;£'. '</td>',
-                        '<td> 
-                            <form class="delete" action="processing.php?action = delete" method = "get">
-                                <p>
-                                    <input class = "delete" type = "submit" name = "DELETE" value ="Delete">
-                                </p>
-                            </form> 
-                        </td>',
-                        '</tr>';    
-                    $totalGeneral += $product['total'];                
+                echo "<tr>",
+                        "<td>". $index . "</td>", //               
+                        "<td>". $product ["name"]. "</td>",                    
+                        "<td>". number_format($product["price"], 2 , ",", "&nbsp;"). "&nbsp;£". "</td>",  //# We use number formatter to change the way our value is presented, so we start by getting the value first, then by saying 2 you mean 2 places after a decimal, next we show what sign is for decimal for us and after that we add a nonbreaking space. After we formatted our value we just add a symbol for money                   
+                        "<td>". $product["qtt"]. "</td>",                    
+                        "<td>". number_format($product["total"], 2 , ",", "&nbsp;"). "&nbsp;£". "</td>",
+                        "<td> 
+                            <a href='processing.php?action=delete&id=$index'>Delete</a> //# Instead of using form like before you just make a link 
+                        </td>",
+                        "</tr>";    
+                    $totalGeneral += $product["total"];                
             }
-            echo '<tr>',
+            echo "<tr>",
                     '<td colspan = 4> Total general : </td>',
                     '<td> <strong>'.number_format($totalGeneral, 2 , ',' , '&nbsp;'). '&nbsp;£</strong> </td>',
                     '<td> 
-                            <form action="processing.php?action=delete" method = "get">
-                                <p>
-                                    <input class="delete" type = "submit" name = "DELETE" value ="Delete All" >
-                                </p>
-                            </form> 
-                        </td>',
+                        <a href="processing.php?action=clear">Clear</a> //# Much simpler than delete since it just deletes everything
+                    </td>',
                     '</tbody>',
                 '</table>';        
             
