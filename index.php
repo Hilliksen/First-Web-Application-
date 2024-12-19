@@ -27,7 +27,7 @@
 
     <h1>ADD A PRODUCT</h1>
     <div id="container">
-        <form action="processing.php" method = "post">
+        <form action="processing.php?action=add" method = "post">
             <p>
                 <label>
                     Name of the product : <br>
