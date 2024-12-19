@@ -49,9 +49,19 @@ if (isset($_GET['action'])){
                 header("Location: recap.php");exit;
             }
         break;
-        case 'qtt up';
+        case 'qtt-up';
+        if (isset( $_GET['id']) && isset($_SESSION['products'][$_GET['id']])) {
+ 
+            $_SESSION['products'][$_GET['id']]['qtt']++;
+            header("Location: recap.php");exit;
+        }
         break;
-        case 'qtt down';
+        case 'qtt-down';
+        if (isset( $_GET['id']) && isset($_SESSION['products'][$_GET['id']])) {
+
+            $_SESSION['products'][$_GET['id']]['qtt']--;
+            header("Location: recap.php");exit;
+        }
         break;
     }
 
