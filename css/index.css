@@ -100,7 +100,16 @@ table{
 
 
 .delete {
-    background-color: #FFFED2 !important;
-    color: #B44634 !important;
+    background-color: #FFFED2;
+    color: #B44634;
     border: none;
+}
+
+a {
+    color: #B44634;
+    text-decoration: none; 
+}
+
+a:visited {
+    color: #B44634;
 }
