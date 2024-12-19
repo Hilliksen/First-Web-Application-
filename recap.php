@@ -45,8 +45,12 @@
                         "<td>". $product["qtt"]. "</td>",                    
                         "<td>". number_format($product["total"], 2 , ",", "&nbsp;"). "&nbsp;£". "</td>",
                         "<td> 
-                            <a href='processing.php?action=delete&id=$index'>Delete</a> //# Instead of using form like before you just make a link 
-                        </td>",
+                            <a href='processing.php?action=delete&id=$index'>Delete</a> 
+                        </td>", 
+                        "<td> 
+                            <a href='processing.php?action=qtt-up&id=$index'>+</a>
+                            <a href='processing.php?action=qtt-down&id=$index''>-</a> 
+                        </td>",    //# Instead of using form like before you just make a link 
                         "</tr>";    
                     $totalGeneral += $product["total"];                
             }
@@ -54,8 +58,9 @@
                     '<td colspan = 4> Total general : </td>',
                     '<td> <strong>'.number_format($totalGeneral, 2 , ',' , '&nbsp;'). '&nbsp;£</strong> </td>',
                     '<td> 
-                        <a href="processing.php?action=clear">Clear</a> //# Much simpler than delete since it just deletes everything
-                    </td>',
+                        <a href="processing.php?action=clear">Clear</a> 
+                    </td>',//# Much simpler than delete since it just deletes everything
+                    
                     '</tbody>',
                 '</table>';        
             
