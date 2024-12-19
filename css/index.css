@@ -90,6 +90,7 @@ input {
 table{
     border: 2px solid #B44634;
     padding: var(--ten);
+    text-align: center;
     
 
     & td{
