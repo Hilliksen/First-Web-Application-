@@ -1,27 +1,16 @@
 <?php
     session_start();
+    ob_start();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Teleshopping</title>
-</head>
-<body>
 
-
-<div class="nav">
+<nav>
     <a href="recap.php"><i class="fa-solid fa-cart-shopping"></i>CART</a>
     <a><?php 
         $productCount = isset($_SESSION['products']) ?  count($_SESSION['products']) : 0 ;
         echo $productCount;    
     ?></a>
-</div>
+</nav>
 
 
 
@@ -55,5 +44,8 @@
         
     </div>
 
-</body>
-</html>
+    <?php
+        $content  = ob_get_clean();
+
+        require_once "template.php";
+    ?>
