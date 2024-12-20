@@ -47,7 +47,7 @@ input {
     
 }
 
-.nav{  
+nav{  
     margin: var(--ten); 
     display: flex;
     justify-content: flex-end;
@@ -65,8 +65,12 @@ input {
     }
 }
 
-.nav2{  
+.second{  
+    
     margin: var(--ten); 
+    display: flex;
+    justify-content: flex-start;
+    
     
     & a{
         margin: var(--ten);
