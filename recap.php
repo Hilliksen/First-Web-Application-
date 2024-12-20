@@ -43,16 +43,16 @@
                         "<td>". $product ["name"]. "</td>",                    
                         "<td>". number_format($product["price"], 2 , ",", "&nbsp;"). "&nbsp;£". "</td>",  //# We use number formatter to change the way our value is presented, so we start by getting the value first, then by saying 2 you mean 2 places after a decimal, next we show what sign is for decimal for us and after that we add a nonbreaking space. After we formatted our value we just add a symbol for money                   
                         "<td>". $product["qtt"]. "</td>",                    
-                        "<td>". number_format($product["total"], 2 , ",", "&nbsp;"). "&nbsp;£". "</td>",
+                        "<td>". number_format($product["qtt"] * $product["price"], 2 , ",", "&nbsp;"). "&nbsp;£". "</td>",
                         "<td> 
                             <a href='processing.php?action=delete&id=$index'>Delete</a> 
                         </td>", 
                         "<td> 
                             <a href='processing.php?action=qtt-up&id=$index'>+</a>
-                            <a href='processing.php?action=qtt-down&id=$index''>-</a> 
+                            <a href='processing.php?action=qtt-down&id=$index'>-</a> 
                         </td>",    //# Instead of using form like before you just make a link 
                         "</tr>";    
-                    $totalGeneral += $product["total"];                
+                    $totalGeneral += $product["qtt"] * $product["price"];                
             }
             echo "<tr>",
                     '<td colspan = 4> Total general : </td>',
